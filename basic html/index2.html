@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Watchlist</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <div class="container"> <br>
+    <h1>My Anime Watchlist</h1>
+    <ul class="movie-list" id="movieList">
+      <!-- Movies will be displayed here -->
+    </ul>
+    <form class="add-movie-form" id="addMovieForm">
+      <input type="text" id="movieTitle" placeholder="Enter anime title" required>
+      <button type="submit">Add anime</button>
+         <br> <br>
+    </form>
+  </div>
+
+  <script>
+    // Store movies in an array
+    const movies = [];
+
+    // Function to add a movie to the list
+    function addMovie(title) {
+      movies.push(title);
+      displayMovies();
+    }
+
+    // Function to display the list of movies
+    function displayMovies() {
+      const movieList = document.getElementById("movieList");
+      movieList.innerHTML = "";
+
+      movies.forEach((movie, index) => {
+        const movieItem = document.createElement("li");
+        movieItem.className = "movie-item";
+        movieItem.textContent = `${index + 1}. ${movie}`;
+        movieList.appendChild(movieItem);
+      });
+    }
+
+    // Event listener for the form submission
+    const addMovieForm = document.getElementById("addMovieForm");
+    addMovieForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const movieTitle = document.getElementById("movieTitle").value;
+      if (movieTitle) {
+        addMovie(movieTitle);
+        document.getElementById("movieTitle").value = "";
+      }
+    });
+
+    // Initial display of movies
+    displayMovies();
+  </script>
+</body>
+</html>
