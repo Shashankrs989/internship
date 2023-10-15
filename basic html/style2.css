@@ -1,0 +1,30 @@
+body {
+      font-family: Arial, sans-serif;
+     background-image: url(wall.jpg);
+     
+    }
+    h1 {
+      text-align: center;
+        color: aliceblue;
+        
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+        background-color: black;
+    }
+    .movie-list {
+      list-style: none;
+      padding: 0;
+    }
+    .movie-item {
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+    }
+    .add-movie-form {
+      margin: 20px 0;
+    }
